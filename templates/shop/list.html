@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}e-Commerce{% endblock title %}
+
+{% block content %}
+    {% for product in products %}
+        <h2>{{ product.name }}</h2>
+        <br />
+        <img src="{{ product.image.url }}" alt="Product" width="500" height="300">
+        <br />
+        <p>$ {{ product.price }} </p>
+        <p>{{ product.description|truncatewords:30|linebreaks }}</p>
+    {% endfor %}
+{% endblock content %}
